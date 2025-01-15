@@ -1,8 +1,9 @@
+
 import '/constants.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatefulWidget {
-
+  static const String  id = 'login_screen';
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -17,10 +18,15 @@ class _LoginScreenState extends State<LoginScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Container(
-              height: 200.0,
-              child: Image.asset('images/logo.png'),
+
+            Hero(
+              tag: 'logo',
+              child: SizedBox(
+                height: 200.0,
+                child: Image.asset('images/logo.png'),
+              ),
             ),
+
             const SizedBox(
               height: 48.0,
             ),
@@ -28,7 +34,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: const InputDecoration(
                 hintText: 'Enter your email',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
@@ -52,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
               decoration: const InputDecoration(
                 hintText: 'Enter your password',
                 contentPadding:
-                    EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
